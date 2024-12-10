@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Evaluation Results</title>
+</head>
+<body>
+    <h1>Evaluation Results</h1>
+
+    {% if evaluation_results %}
+        <ul>
+            {% for idx, feedback in evaluation_results.items() %}
+                <li><strong>Answer {{ idx }} Feedback:</strong> {{ feedback }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No evaluations available.</p>
+    {% endif %}
+</body>
+</html>
+
+

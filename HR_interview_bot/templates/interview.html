@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Questions</title>
+</head>
+<body>
+    <h1>Interview Questions for {{ job_title }}</h1>
+
+    <form method="POST" action="{{ url_for('start_interview', job_title=job_title) }}">
+        <ul>
+            {% for question in questions %}
+                <li>
+                    <label for="question_{{ loop.index }}">{{ question }}</label><br>
+                    <textarea id="question_{{ loop.index }}" name="answer_{{ loop.index }}" rows="4" cols="50"></textarea><br>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit Answers</button>
+    </form>
+</body>
+</html>
